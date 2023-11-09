@@ -28,11 +28,6 @@ struct CoinRowView: View {
     CoinRowView(coin: previewCoins[0], showHoldingsColumn: true)
 }
 
-#Preview(traits: .sizeThatFitsLayout) {
-    CoinRowView(coin: previewCoins[0], showHoldingsColumn: true)
-        .preferredColorScheme(.dark)
-}
-
 extension CoinRowView {
     private var leftColumn: some View {
         HStack(spacing: 0) {
@@ -40,7 +35,7 @@ extension CoinRowView {
                 .font(.caption)
                 .foregroundStyle(Color.theme.secondaryColor)
                 .frame(minWidth: 30)
-            Circle()
+            CoinImageView(coin: coin)
                 .frame(width: 30, height: 30)
             Text(coin.symbol.uppercased())
                 .font(.headline)
