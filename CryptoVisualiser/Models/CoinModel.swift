@@ -74,6 +74,11 @@ extension CoinModel {
 }
 
 let previewCoins: [CoinModel] = load("sample_response.json")
+
+let stat1 = StatisticModel(title: "Market Cap", value: "$19.2Bn", percentageChange: 13.3)
+let stat2 = StatisticModel(title: "Total Volume", value: "$1.2Tr")
+let stat3 = StatisticModel(title: "Portfolio Value", value: "$30.9K", percentageChange: -9.8)
+
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
     
